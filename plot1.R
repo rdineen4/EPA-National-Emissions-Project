@@ -10,9 +10,8 @@ unzip("zipdata")
 
 #Read in data
 NEI <- readRDS("summarySCC_PM25.rds")
-SCC <- readRDS("Source_Classification_Code.rds")
 
-#Find the sum of emissions grouped by year, 
+#Find the sum of emissions grouped by year 
 library(dplyr)
 subdata <- NEI %>% group_by(year) %>% summarize(total_emissions = sum(Emissions)/1000000)
 
